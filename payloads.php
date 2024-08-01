@@ -1,5 +1,5 @@
 <?php
-$secret = 'votre_clé_secrète'; // Remplacez par la clé secrète que vous avez configurée dans GitHub
+$secret = 'eldodo'; // Remplacez par la clé secrète que vous avez configurée dans GitHub
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -23,7 +23,7 @@ if (!hash_equals($hash, $signature)) {
 }
 
 // Commande pour mettre à jour le dépôt (exécution de `git pull`)
-exec('cd /chemin/vers/votre/site && git pull origin main', $output, $return_var);
+exec('cd /home/ledodok/www && git pull origin main', $output, $return_var);
 
 if ($return_var === 0) {
     echo "Déploiement réussi.";
