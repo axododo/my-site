@@ -314,4 +314,41 @@ a {
 
 @keyframes move1 {
     0%, 100% { translate: 0 0 0; rotate: 0; }
-    50% { translate: 0.3em -0.1em
+    50% { translate: 0.3em -0.1em 0.3em; rotate: -0.8deg; }
+}
+@keyframes move2 {
+    0%, 100% { translate: 0 0 0; rotate: 0; }
+    50% { translate: 0.1em -0.3em 0.1em; rotate: 0.6deg; }
+}
+@keyframes move3 {
+    0%, 100% { translate: 0 0 0; rotate: 0; }
+    50% { translate: -0.3em -0.3em 0.1em; rotate: 1deg; }
+}
+@keyframes move4 {
+    0%, 100% { translate: 0 0 0; rotate: 0; }
+    50% { translate: -0.1em -0.1em 0.2em; rotate: -1.2deg; }
+}
+@keyframes move5 {
+    0%, 100% { translate: 0 0 0; rotate: 0; }
+    50% { translate: -0.4em 0.2em 0.1em; rotate: 1.4deg; }
+}
+@keyframes move6 {
+    0%, 100% { translate: 0 0 0; rotate: 0; }
+    50% { translate: 0.3em 0.3em 0.1em; rotate: -1.8deg; }
+}
+
+@keyframes light {
+    0% {
+        opacity: 0;
+        translate: -2em 1em;
+        filter: blur(3px);
+    }
+    20% {
+        opacity: 1;
+        translate: -2em 1em;
+        filter: blur(0);
+    }
+    100% {
+        translate: 20em -2em;
+    }
+}
