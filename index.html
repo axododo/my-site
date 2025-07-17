@@ -1,72 +1,47 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>test</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <!-- design inspired by https://www.authkit.com/ -->
-<div class="header">
-  <h2><a href="pornhub.com" target="_blank" rel="noopener noreferrer">Dodo</a></h2>
-  <div class="mid-spot" onclick="document.body.classList.toggle('gold');"></div>
-  <button class="contact-btn">
-    <span class="glow"></span>
-    <span clacomss="contact-btn-content">Contact Us</span>
-  </button>
-
-  <div class="spotlight">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-
-<canvas id="particleCanvas"></canvas>
-
-<div class="accent-lines">
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<div class="heroSubP">
-  <p>hello</p>
-</div>
-<div class="hero">
-  <div class="heroT">
-    <h2>on my site</h2>
-    <h2>on my site</h2>
-  </div>
-</div>
-<p class="heroP">The world's no useful<br>
-site web</p>
-<div class="mountains">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="hero-spacer"></div>
-
-<div class="content-section">
-  <div class="content-acc">
-    <div></div>
-    <div></div>
-  </div>
-  <p class="subt">Revolutionary by design</p>
-  <h3 class="title">Harness. Empower.<br>
-    Unmatched Versatility.</h3>
-  <p class="subp">At the core lies our revolutionary framework, <br>ensuring adaptability across all application architectures.</p>
-</div>
-<script src="code.js"></script>
-  </body>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Site des News et Catastrophes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="news">News</button>
+      <button class="tab-button" data-tab="analytics">Analytics</button>
+      <button class="tab-button" data-tab="settings">Settings</button>
+    </nav>
+  </header>
+  <main>
+    <section class="tab-content active" id="news">
+      <h2>News</h2>
+      <div id="news-container">
+        <!-- Les news seront chargées ici -->
+      </div>
+    </section>
+    <section class="tab-content" id="analytics">
+      <h2>Analytics</h2>
+      <div id="analytics-container">
+        <!-- Résultats d'analyse -->
+      </div>
+    </section>
+    <section class="tab-content" id="settings">
+      <h2>Paramètres</h2>
+      <p>Configuration de l'interface.</p>
+    </section>
+  </main>
+  <script src="fetchNews.js"></script>
+  <script>
+    // Gestion des onglets
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+        button.classList.add('active');
+        document.getElementById(button.getAttribute('data-tab')).classList.add('active');
+      });
+    });
+  </script>
+</body>
 </html>
